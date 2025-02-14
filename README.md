@@ -11,8 +11,8 @@
 
 <!-- badges: end -->
 
-`redcaptools` contains home-grown functions for working with REDCap data
-in R.
+`randolist` contains home-grown functions for creating randomisation
+lists in R.
 
 ## Installation
 

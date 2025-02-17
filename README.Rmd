@@ -39,3 +39,33 @@ remotes::install_github("CTU-Bern/randolist")
 <!-- ``` r -->
 <!-- install.packages("randolist", repos = c('https://ctu-bern.r-universe.dev', 'https://cloud.r-project.org')) -->
 <!-- ``` -->
+
+## Generating randomization lists
+
+Load the package
+
+```{r}
+library(randolist)
+```
+
+
+### Unstratified randomization
+
+Where no strata are defined, the `blockrand` function can be used to create a randomization list. 
+
+```{r}
+blockrand(n = 10, 
+          blocksizes = 1:2)
+```
+
+The treatment label is set via the `arms` argument.
+
+Block sizes are defined via the `blocksizes` argument. The above example creates a randomization list with blocks of 1 or 2 *of each arm* (so in practice, the block sizes are 2 and 4).
+
+Allocation schemes beyond 1:1 randomization are possible by specifying the `arms` argument, specifically by using the same arm label multiple times.
+
+```{r}
+blockrand(n = 10, 
+          blocksizes = 1:2,
+          arms = c("A", "A", "B"))
+```

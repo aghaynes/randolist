@@ -9,6 +9,9 @@ on:
 
 name: Render README
 
+permissions:
+  contents: write
+
 jobs:
   render:
     name: Render README

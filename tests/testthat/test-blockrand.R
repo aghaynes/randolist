@@ -10,10 +10,17 @@ test_that("structure as expected", {
                c("seq_in_list", "block", "blocksize", "seq_in_block", "arm"))
 })
 
-test_that("seed produces consistent results", {
+test_that("seed produces consistent results (within session)", {
   set.seed(1)
   res3 <- blockrand(100, blocksizes = c(1, 2))
   expect_identical(res1, res3)
+})
+
+test_that("seed produces consistent results (across sessions/OSs)", {
+  expect_equal(res1$arm[1:10],
+               # sequence from AHs computer, 2025-02-17
+               c("A", "A", "B", "B", "A", "B", "A", "B", "B", "A"),
+               ignore_attr = TRUE)
 })
 
 test_that("number of randomizations is sufficient", {
@@ -33,5 +40,11 @@ test_that("correct block sizes", {
 test_that("arm labels", {
   expect_true(all(res1$arm %in% c("A", "B")))
   expect_true(all(res2$arm %in% c("Foo", "Bar")))
+})
+
+test_that("single block size works", {
+  tmp <- blockrand(100, blocksizes = 2)
+  expect_true(all(tmp$blocksize == 4))
+  expect_true(max(tmp$block) == 25)
 })
 

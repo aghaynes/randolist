@@ -1,9 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `randolist`
+# `randolist` <img src='man/figures/logo.png' align="right" width="200">
 
-<!-- <img src='man/figures/logo.png' align="right" width="200"> -->
 <!-- badges: start -->
 
 [![](https://img.shields.io/badge/dev%20version-0.0.1.9000-blue.svg)](https://github.com/CTU-Bern/randolist)

@@ -45,18 +45,16 @@ create a randomization list.
 blockrand(n = 10, 
           blocksizes = 1:2)
 #>    seq_in_list block blocksize seq_in_block arm
-#> 1            1     1         4            1   B
-#> 2            2     1         4            2   B
-#> 3            3     1         4            3   A
-#> 4            4     1         4            4   A
+#> 1            1     1         4            1   A
+#> 2            2     1         4            2   A
+#> 3            3     1         4            3   B
+#> 4            4     1         4            4   B
 #> 5            5     2         2            1   A
 #> 6            6     2         2            2   B
-#> 7            7     3         2            1   B
-#> 8            8     3         2            2   A
-#> 9            9     4         4            1   B
-#> 10          10     4         4            2   A
-#> 11          11     4         4            3   A
-#> 12          12     4         4            4   B
+#> 7            7     3         4            1   B
+#> 8            8     3         4            2   A
+#> 9            9     3         4            3   B
+#> 10          10     3         4            4   A
 ```
 
 The treatment label is set via the `arms` argument.
@@ -74,19 +72,16 @@ blockrand(n = 10,
           blocksizes = 1:2,
           arms = c("A", "A", "B"))
 #>    seq_in_list block blocksize seq_in_block arm
-#> 1            1     1         3            1   A
-#> 2            2     1         3            2   B
-#> 3            3     1         3            3   A
-#> 4            4     2         6            1   A
-#> 5            5     2         6            2   A
-#> 6            6     2         6            3   A
-#> 7            7     2         6            4   B
-#> 8            8     2         6            5   A
-#> 9            9     2         6            6   B
-#> 10          10     3         6            1   A
-#> 11          11     3         6            2   B
-#> 12          12     3         6            3   A
-#> 13          13     3         6            4   A
-#> 14          14     3         6            5   A
-#> 15          15     3         6            6   B
+#> 1            1     1         6            1   A
+#> 2            2     1         6            2   B
+#> 3            3     1         6            3   A
+#> 4            4     1         6            4   B
+#> 5            5     1         6            5   A
+#> 6            6     1         6            6   A
+#> 7            7     2         6            1   A
+#> 8            8     2         6            2   B
+#> 9            9     2         6            3   A
+#> 10          10     2         6            4   B
+#> 11          11     2         6            5   A
+#> 12          12     2         6            6   A
 ```

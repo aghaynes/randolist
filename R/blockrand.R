@@ -15,6 +15,7 @@
 #' @param arms number of arms to randomise
 #' @param blocksizes numbers of each arm to include in blocks
 #' @param pascal logical, whether to use pascal's triangle to determine block sizes
+#' @param ... arguments passed on to other methods (currently unused)
 #'
 #' @returns a data frame with columns block, blocksize, seq_in_block, arm
 #' @export
@@ -38,7 +39,8 @@
 blockrand <- function(n,
                       arms = LETTERS[seq(2)],
                       blocksizes = 1:4,
-                      pascal = TRUE
+                      pascal = TRUE,
+                      ...
                       ){
 
   N_per_block <- blocksizes * length(arms)
@@ -66,13 +68,13 @@ blockrand <- function(n,
     arms_i <- rep(arms, each = blocks[i] / length(arms))
 
     # output dataframe
-    data.frame(block = i,
+    data.frame(block_in_strata = i,
                blocksize = blocks[i],
                seq_in_block = 1:blocks[i],
                arm = sample(arms_i, blocks[i]))
   }) |> do.call(what = rbind)
-  rlist$seq_in_list <- seq_len(nrow(rlist))
-  rlist <- rlist[, c("seq_in_list", "block", "blocksize",
+  rlist$seq_in_strata <- seq_len(nrow(rlist))
+  rlist <- rlist[, c("seq_in_strata", "block_in_strata", "blocksize",
                      "seq_in_block", "arm")]
 
   class(rlist) <- c("randolist", class(rlist))

@@ -4,7 +4,7 @@
 \alias{blockrand}
 \title{Block randomization}
 \usage{
-blockrand(n, arms = LETTERS[seq(2)], blocksizes = 1:4, pascal = TRUE)
+blockrand(n, arms = LETTERS[seq(2)], blocksizes = 1:4, pascal = TRUE, ...)
 }
 \arguments{
 \item{n}{total number of randomizations (within a single stratum)}
@@ -14,6 +14,8 @@ blockrand(n, arms = LETTERS[seq(2)], blocksizes = 1:4, pascal = TRUE)
 \item{blocksizes}{numbers of each arm to include in blocks}
 
 \item{pascal}{logical, whether to use pascal's triangle to determine block sizes}
+
+\item{...}{arguments passed on to other methods (currently unused)}
 }
 \value{
 a data frame with columns block, blocksize, seq_in_block, arm

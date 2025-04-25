@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2025-02-18T07:46Z
+last_built: 2025-04-25T06:55Z
 urls:
   reference: https://ctu-bern.github.io/randolist/reference
   article: https://ctu-bern.github.io/randolist/articles

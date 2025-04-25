@@ -47,24 +47,24 @@ summary(r)
 #> 
 #> ── Overall ──
 #> 
-#> Total number of randomisations:  100 
+#> Total number of randomisations:  102 
 #> Randomisation groups:  Trt1 Trt2 
 #> Randomisation ratio: 1:1 
 #> Randomisations to each arm: 1:1
 #> Trt1 Trt2 
-#>   50   50 
+#>   51   51 
 #> Block sizes:
 #>  2  4  6 
-#>  4 11  8
+#>  9 15  4
 #> ── Stratifier level ──
 #> Randomisation list is stratified by variables sex
 #> ── 1
 #> Randomisations per level of sex :
 #> Female   Male 
-#>     50     50 
+#>     52     50 
 #> Balance per level of sex :        
 #>          Trt1 Trt2
-#>   Female   25   25
+#>   Female   26   26
 #>   Male     25   25
 #> 
 #> ── Stratum level ──
@@ -72,14 +72,14 @@ summary(r)
 #> 2 strata are defined:
 #> 
 #> Female   Male 
-#>     50     50
+#>     52     50
 #> ── Female
-#> Number of randomisations:  50
+#> Number of randomisations:  52
 #> Trt1 Trt2 
-#>   25   25 
+#>   26   26 
 #> Block sizes: 
 #> 2 4 6 
-#> 2 4 5
+#> 5 6 3
 #> 
 #> ── Male
 #> Number of randomisations:  50
@@ -87,7 +87,7 @@ summary(r)
 #>   25   25 
 #> Block sizes: 
 #> 2 4 6 
-#> 2 7 3
+#> 4 9 1
 ```
 
 Export the randomisation list in a database compatible format with

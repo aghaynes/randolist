@@ -90,14 +90,36 @@ database with the values that map to those in <code>arm</code>. See the examples
 <span class="r-in"><span>  strata_enc <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>sex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>sex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"M"</span>, <span class="st">"F"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>                                    code <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  target_db <span class="op">=</span> <span class="st">"REDCap"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in randolist_to_db(r, rando_enc = data.frame(arm = c("T1", "T2"),     rando_res = c(1, 2)), strata_enc = list(sex = data.frame(sex = c("M",     "F"), code = 1:2)), target_db = "REDCap"):</span> could not find function "randolist_to_db"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    sex rando_res</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    1         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    1         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    1         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    1         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    1         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    1         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7    1         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8    1         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9    1         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10   1         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   1         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12   1         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13   2         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   2         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15   2         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16   2         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17   2         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18   2         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19   2         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20   2         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21   2         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22   2         2</span>
 <span class="r-in"><span><span class="fu">randolist_to_db</span><span class="op">(</span><span class="va">r</span>,</span></span>
 <span class="r-in"><span>  rando_enc <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>arm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"T1"</span>, <span class="st">"T2"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>                         rando_res <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  strata_enc <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>sex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>sex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"M"</span>, <span class="st">"F"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>                                     code <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  target_db <span class="op">=</span> <span class="st">"secuTrial"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in randolist_to_db(r, rando_enc = data.frame(arm = c("T1", "T2"),     rando_res = c(1, 2)), strata_enc = list(sex = data.frame(sex = c("M",     "F"), code = 1:2)), target_db = "secuTrial"):</span> could not find function "randolist_to_db"</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (!is.na(rando_enc)) {    warning("rando_encoding ignored for secuTrial")}:</span> the condition has length &gt; 1</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

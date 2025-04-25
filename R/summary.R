@@ -79,51 +79,51 @@ summary.randolist <- function(object, ...){
 #' @export
 #' @importFrom glue glue_collapse
 #' @importFrom cli cli_h1 cli_h2 cli_h3
-print.randolistsum <- function(object, ...){
+print.randolistsum <- function(x, ...){
 
   cli_h1("Randomisation list report")
   cli_h2("Overall")
 
-  cat("Total number of randomisations: ", object$n_rando, "\n")
-  cat("Randomisation groups: ", names(object$arms), "\n")
-  cat("Randomisation ratio:", object$ratio, "\n")
+  cat("Total number of randomisations: ", x$n_rando, "\n")
+  cat("Randomisation groups: ", names(x$arms), "\n")
+  cat("Randomisation ratio:", x$ratio, "\n")
 
-  cat("Randomisations to each arm:", object$ratio)
-  print(object$arms)
+  cat("Randomisations to each arm:", x$ratio)
+  print(x$arms)
 
   cat("Block sizes:")
-  print(object$block_sizes)
+  print(x$block_sizes)
 
 
-  if(object$stratified){
+  if(x$stratified){
     cli_h2("Stratifier level")
 
-    cat("Randomisation list is stratified by variables", glue_collapse(object$stratavars, ", ", last = " and "), "\n")
-    lapply(seq_along(object$stratavars),
+    cat("Randomisation list is stratified by variables", glue_collapse(x$stratavars, ", ", last = " and "), "\n")
+    lapply(seq_along(x$stratavars),
            function(x){
              cli_h3(x)
-             cat("Randomisations per level of", object$stratavars[x], ":")
-             print(object$stratavars_tabs[[x]]$levels)
-             cat("Balance per level of", object$stratavars[x], ":")
-             print(object$stratavars_tabs[[x]]$levels_by_arm)
+             cat("Randomisations per level of", x$stratavars[x], ":")
+             print(x$stratavars_tabs[[x]]$levels)
+             cat("Balance per level of", x$stratavars[x], ":")
+             print(x$stratavars_tabs[[x]]$levels_by_arm)
              cat("Variable coding:\n")
              cat()
 
            })
 
     cli_h2("Stratum level")
-    cat(nrow(object$strata), "strata are defined:\n")
-    print(object$strata)
+    cat(nrow(x$strata), "strata are defined:\n")
+    print(x$strata)
 
-    lapply(seq_along(object$stratum_tabs),
+    lapply(seq_along(x$stratum_tabs),
            function(x){
-             cli_h3(names(object$strata)[x])
-             # print(object$stratum_tabs[[x]]$summary)
-             cat("Number of randomisations: ", object$stratum_tabs[[x]]$summary$n_rando)
-             print(object$stratum_tabs[[x]]$summary$arms)
+             cli_h3(names(x$strata)[x])
+             # print(x$stratum_tabs[[x]]$summary)
+             cat("Number of randomisations: ", x$stratum_tabs[[x]]$summary$n_rando)
+             print(x$stratum_tabs[[x]]$summary$arms)
 
              cat("Block sizes: ")
-             print(object$stratum_tabs[[x]]$summary$block_sizes)
+             print(x$stratum_tabs[[x]]$summary$block_sizes)
            })
 
 

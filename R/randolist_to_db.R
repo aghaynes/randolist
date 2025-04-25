@@ -17,7 +17,7 @@
 #' database with the values that map to those in `arm`. See the examples.
 #'
 #' @importFrom dplyr select rename left_join mutate across all_of n
-#' @importFrom rlang arg_match
+#' @importFrom rlang arg_match :=
 #' @export
 #'
 #' @examples
@@ -40,6 +40,8 @@ randolist_to_db <- function(randolist,
                             target_db = c("REDCap", "secuTrial"),
                             strata_enc = NA,
                             rando_enc = NA){
+
+  arm <- code <- Number <- NULL
 
   target_db <- arg_match(target_db, c("REDCap", "secuTrial"))
   stratavars <- attr(randolist, "stratavars")

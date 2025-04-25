@@ -12,13 +12,16 @@
 \item{...}{additional arguments (currently unused)}
 }
 \description{
-Create a short summary report of the aspects of the randomisation list.
+Create a short summary report of the aspects of the randomisation list, which
+could be used for quality control.
 }
 \examples{
 r <- randolist(20)
-summary(r)
+print(summary(r))
 
 r2 <- randolist(20, strata = list(sex = c("M", "F")))
-summary(r2)
+print(summary(r2))
+
+# NOTE: explicitly printing isn't technically necessary
 
 }

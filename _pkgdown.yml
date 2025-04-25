@@ -1,4 +1,7 @@
 url: https://ctu-bern.github.io/randolist/
 template:
   bootstrap: 5
-
+  light-switch: true
+navbar:
+  structure:
+    right: [search, github]

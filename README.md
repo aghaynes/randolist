@@ -47,25 +47,25 @@ summary(r)
 #> 
 #> ── Overall ──
 #> 
-#> Total number of randomisations:  100 
+#> Total number of randomisations:  106 
 #> Randomisation groups:  Trt1 Trt2 
 #> Randomisation ratio: 1:1 
 #> Randomisations to each arm: 1:1
 #> Trt1 Trt2 
-#>   50   50 
+#>   53   53 
 #> Block sizes:
 #>  2  4  6 
-#>  7 11  7
+#> 11 15  4
 #> ── Stratifier level ──
 #> Randomisation list is stratified by variables sex
 #> ── 1
 #> Randomisations per level of sex :
 #> Female   Male 
-#>     50     50 
+#>     54     52 
 #> Balance per level of sex :        
 #>          Trt1 Trt2
-#>   Female   25   25
-#>   Male     25   25
+#>   Female   27   27
+#>   Male     26   26
 #> Variable coding:
 #> 
 #> ── Stratum level ──
@@ -73,22 +73,22 @@ summary(r)
 #> 2 strata are defined:
 #> 
 #> Female   Male 
-#>     50     50
+#>     54     52
 #> ── Female
-#> Number of randomisations:  50
+#> Number of randomisations:  54
 #> Trt1 Trt2 
-#>   25   25 
+#>   27   27 
 #> Block sizes: 
 #> 2 4 6 
-#> 3 5 4
+#> 7 7 2
 #> 
 #> ── Male
-#> Number of randomisations:  50
+#> Number of randomisations:  52
 #> Trt1 Trt2 
-#>   25   25 
+#>   26   26 
 #> Block sizes: 
 #> 2 4 6 
-#> 4 6 3
+#> 4 8 2
 ```
 
 Export the randomisation list in a database compatible format with
@@ -113,4 +113,3 @@ The package logo was created with
 [`ggplot2`](https://ggplot2.tidyverse.org/) and
 [`hexSticker`](https://github.com/GuangchuangYu/hexSticker) with icons
 from [Font Awesome](https://fontawesome.com/).
-

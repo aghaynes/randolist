@@ -18,7 +18,7 @@
 #' @param ... arguments passed on to other methods (currently unused)
 #'
 #' @returns a data frame with columns block, blocksize, seq_in_block, arm
-#' @export
+#' @noRd
 #'
 #' @examples
 #' set.seed(1)

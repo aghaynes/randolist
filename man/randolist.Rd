@@ -4,7 +4,14 @@
 \alias{randolist}
 \title{Generate randomisation lists}
 \usage{
-randolist(n, arms = LETTERS[1:2], strata = NULL, blocksizes = 1:3, ...)
+randolist(
+  n,
+  arms = LETTERS[1:2],
+  strata = NA,
+  blocksizes = 1:3,
+  pascal = TRUE,
+  ...
+)
 }
 \arguments{
 \item{n}{total number of randomizations (per stratum)}
@@ -15,9 +22,9 @@ randolist(n, arms = LETTERS[1:2], strata = NULL, blocksizes = 1:3, ...)
 
 \item{blocksizes}{numbers of each arm to include in blocks (see details)}
 
-\item{...}{arguments passed on to other methods (e.g. blockrand)}
-
 \item{pascal}{logical, whether to use pascal's triangle to determine block sizes}
+
+\item{...}{arguments passed on to other methods (e.g. blockrand)}
 }
 \description{
 Randomisation lists are central to randomised trials. This function allows

@@ -2,23 +2,23 @@
 % Please edit documentation in R/summary.R
 \name{summary.randolist}
 \alias{summary.randolist}
-\alias{summary.randostratalist}
-\title{Summary method for randolist objects}
+\title{Summary method fro randolist objects}
 \usage{
 \method{summary}{randolist}(object, ...)
-
-\method{summary}{randostratalist}(object, ...)
 }
 \arguments{
-\item{object}{a randolist object}
+\item{object}{randolist object}
 
 \item{...}{additional arguments (currently unused)}
 }
 \description{
-Summary method for randolist objects
+Create a short summary report of the aspects of the randomisation list.
 }
-\section{Functions}{
-\itemize{
-\item \code{summary(randostratalist)}: summary.randolist
+\examples{
+r <- randolist(20)
+summary(r)
 
-}}
+r2 <- randolist(20, strata = list(sex = c("M", "F")))
+summary(r2)
+
+}

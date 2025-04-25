@@ -45,9 +45,11 @@
 #' randolist(10, arms = c("arm 1", "arm 1", "arm 2"))
 #'
 #'
-randolist <- function(n, arms = LETTERS[1:2], strata = NULL, blocksizes = 1:3, ...){
+randolist <- function(n, arms = LETTERS[1:2], strata = NA, blocksizes = 1:3, pascal = TRUE, ...){
 
-  if(is.null(strata)) {
+  strata_y <- is.list(strata)
+
+  if(!strata_y) {
 
     rlist <- blockrand(n = n, arms = arms, blocksizes = blocksizes, ...)
 
@@ -56,7 +58,6 @@ randolist <- function(n, arms = LETTERS[1:2], strata = NULL, blocksizes = 1:3, .
     grid <- expand.grid(strata)
     grid$strata_txt <- apply(grid, 1, function(x) paste(x, collapse = "; "))
     grid$stratum <- nth <- 1:nrow(grid)
-
 
     rlist <- lapply(seq_along(nth), function(x){
       # get the current stratum
@@ -68,16 +69,16 @@ randolist <- function(n, arms = LETTERS[1:2], strata = NULL, blocksizes = 1:3, .
       # add stratum information to the randomization
       rlist$stratum <- stratum
 
-      # return the randomization
-      rlist
+      return(rlist)
     }) |> do.call(what = "rbind") |>
       merge(grid, by = "stratum")
 
-    class(rlist) <- c("randostratalist", class(rlist))
+    class(rlist) <- c("randolist", class(rlist))
   }
 
   attr(rlist, "ratio") <- table(arms) |> paste(collapse = ":")
   attr(rlist, "arms") <- unique(arms)
+  attr(rlist, "stratified") <- strata_y
   attr(rlist, "stratavars") <- names(strata)
 
   return(rlist)

@@ -100,15 +100,12 @@ print.randolistsum <- function(x, ...){
 
     cat("Randomisation list is stratified by variables", glue_collapse(x$stratavars, ", ", last = " and "), "\n")
     lapply(seq_along(x$stratavars),
-           function(x){
-             cli_h3(x)
-             cat("Randomisations per level of", x$stratavars[x], ":")
-             print(x$stratavars_tabs[[x]]$levels)
-             cat("Balance per level of", x$stratavars[x], ":")
-             print(x$stratavars_tabs[[x]]$levels_by_arm)
-             cat("Variable coding:\n")
-             cat()
-
+           function(y){
+             cli_h3(y)
+             cat("Randomisations per level of", x$stratavars[y], ":")
+             print(x$stratavars_tabs[[y]]$levels)
+             cat("Balance per level of", x$stratavars[y], ":")
+             print(x$stratavars_tabs[[y]]$levels_by_arm)
            })
 
     cli_h2("Stratum level")
@@ -116,17 +113,15 @@ print.randolistsum <- function(x, ...){
     print(x$strata)
 
     lapply(seq_along(x$stratum_tabs),
-           function(x){
-             cli_h3(names(x$strata)[x])
+           function(y){
+             cli_h3(names(x$strata)[y])
              # print(x$stratum_tabs[[x]]$summary)
-             cat("Number of randomisations: ", x$stratum_tabs[[x]]$summary$n_rando)
-             print(x$stratum_tabs[[x]]$summary$arms)
+             cat("Number of randomisations: ", x$stratum_tabs[[y]]$summary$n_rando)
+             print(x$stratum_tabs[[y]]$summary$arms)
 
              cat("Block sizes: ")
-             print(x$stratum_tabs[[x]]$summary$block_sizes)
+             print(x$stratum_tabs[[y]]$summary$block_sizes)
            })
-
-
 
   }
 

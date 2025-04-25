@@ -8,7 +8,7 @@ Authors@R:
            )
 Description: Randomization lists are an integral component of randomized clinical trials. randolist provides tools to easily create such lists.
 License: GPL (>= 3)
-Url: https://ctu-bern.github.io/randolist/
+Url: https://ctu-bern.github.io/randolist/, https://github.com/CTU-Bern/randolist
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2

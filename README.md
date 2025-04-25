@@ -34,18 +34,6 @@ Generate the randomisation list itself with `randolist`.
 
 ``` r
 library(randolist)
-#> Loading required package: cli
-#> Loading required package: dplyr
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
-#> Loading required package: glue
-#> Loading required package: rlang
 
 r <- randolist(50, arms = c("Trt1", "Trt2"), strata = list(sex = c("Female", "Male")))
 ```
@@ -59,48 +47,47 @@ summary(r)
 #> 
 #> ── Overall ──
 #> 
-#> Total number of randomisations:  100 
+#> Total number of randomisations:  102 
 #> Randomisation groups:  Trt1 Trt2 
 #> Randomisation ratio: 1:1 
 #> Randomisations to each arm: 1:1
 #> Trt1 Trt2 
-#>   50   50 
+#>   51   51 
 #> Block sizes:
 #>  2  4  6 
-#>  1 14  7
+#>  7 16  4
 #> ── Stratifier level ──
 #> Randomisation list is stratified by variables sex
 #> ── 1
 #> Randomisations per level of sex :
 #> Female   Male 
-#>     50     50 
+#>     50     52 
 #> Balance per level of sex :        
 #>          Trt1 Trt2
 #>   Female   25   25
-#>   Male     25   25
-#> Variable coding:
+#>   Male     26   26
 #> 
 #> ── Stratum level ──
 #> 
 #> 2 strata are defined:
 #> 
 #> Female   Male 
-#>     50     50
+#>     50     52
 #> ── Female
 #> Number of randomisations:  50
 #> Trt1 Trt2 
 #>   25   25 
 #> Block sizes: 
 #> 2 4 6 
-#> 1 6 4
+#> 3 8 2
 #> 
 #> ── Male
-#> Number of randomisations:  50
+#> Number of randomisations:  52
 #> Trt1 Trt2 
-#>   25   25 
+#>   26   26 
 #> Block sizes: 
-#> 4 6 
-#> 8 3
+#> 2 4 6 
+#> 4 8 2
 ```
 
 Export the randomisation list in a database compatible format with

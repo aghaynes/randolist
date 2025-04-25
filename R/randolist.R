@@ -8,7 +8,7 @@
 #' @param strata named list of stratification variables (see examples)
 #' @param blocksizes numbers of each arm to include in blocks (see details)
 #' @param pascal logical, whether to use pascal's triangle to determine block sizes
-#' @param ... arguments passed on to other methods (e.g. blockrand)
+#' @param ... arguments passed on to other methods
 #'
 #' @details \code{blocksizes} defines the number of allocations to each arm in a block.
 #' For example, if there are two arms, and \code{blocksizes} = 1, each block will
@@ -28,7 +28,6 @@
 #' To disable block randomisation, set \code{blocksizes} to the same value as \code{n}.
 #'
 #' @export
-#' @seealso [blockrand()]
 #'
 #' @examples
 #' # example code

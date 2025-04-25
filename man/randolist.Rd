@@ -24,7 +24,7 @@ randolist(
 
 \item{pascal}{logical, whether to use pascal's triangle to determine block sizes}
 
-\item{...}{arguments passed on to other methods (e.g. blockrand)}
+\item{...}{arguments passed on to other methods}
 }
 \description{
 Randomisation lists are central to randomised trials. This function allows
@@ -63,7 +63,4 @@ randolist(10, arms = c("arm 1", "arm 2"))
 randolist(10, arms = c("arm 1", "arm 1", "arm 2"))
 
 
-}
-\seealso{
-\code{\link[=blockrand]{blockrand()}}
 }

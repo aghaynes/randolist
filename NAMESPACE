@@ -3,6 +3,7 @@
 S3method(print,randolistsum)
 S3method(summary,randolist)
 export(randolist)
+export(randolist_to_db)
 importFrom(cli,cli_h1)
 importFrom(cli,cli_h2)
 importFrom(cli,cli_h3)

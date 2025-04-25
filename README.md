@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![](https://img.shields.io/badge/dev%20version-0.0.1.9000-blue.svg)](https://github.com/CTU-Bern/randolist)
+[![](https://img.shields.io/badge/dev%20version-0.0.2-blue.svg)](https://github.com/CTU-Bern/randolist)
 [![R-CMD-check](https://github.com/CTU-Bern/randolist/workflows/R-CMD-check/badge.svg)](https://github.com/CTU-Bern/randolist/actions)
 
 <!-- badges: end -->
@@ -34,6 +34,18 @@ Generate the randomisation list itself with `randolist`.
 
 ``` r
 library(randolist)
+#> Loading required package: cli
+#> Loading required package: dplyr
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+#> Loading required package: glue
+#> Loading required package: rlang
 
 r <- randolist(50, arms = c("Trt1", "Trt2"), strata = list(sex = c("Female", "Male")))
 ```
@@ -47,25 +59,25 @@ summary(r)
 #> 
 #> ── Overall ──
 #> 
-#> Total number of randomisations:  106 
+#> Total number of randomisations:  100 
 #> Randomisation groups:  Trt1 Trt2 
 #> Randomisation ratio: 1:1 
 #> Randomisations to each arm: 1:1
 #> Trt1 Trt2 
-#>   53   53 
+#>   50   50 
 #> Block sizes:
 #>  2  4  6 
-#> 11 15  4
+#>  1 14  7
 #> ── Stratifier level ──
 #> Randomisation list is stratified by variables sex
 #> ── 1
 #> Randomisations per level of sex :
 #> Female   Male 
-#>     54     52 
+#>     50     50 
 #> Balance per level of sex :        
 #>          Trt1 Trt2
-#>   Female   27   27
-#>   Male     26   26
+#>   Female   25   25
+#>   Male     25   25
 #> Variable coding:
 #> 
 #> ── Stratum level ──
@@ -73,22 +85,22 @@ summary(r)
 #> 2 strata are defined:
 #> 
 #> Female   Male 
-#>     54     52
+#>     50     50
 #> ── Female
-#> Number of randomisations:  54
+#> Number of randomisations:  50
 #> Trt1 Trt2 
-#>   27   27 
+#>   25   25 
 #> Block sizes: 
 #> 2 4 6 
-#> 7 7 2
+#> 1 6 4
 #> 
 #> ── Male
-#> Number of randomisations:  52
+#> Number of randomisations:  50
 #> Trt1 Trt2 
-#>   26   26 
+#>   25   25 
 #> Block sizes: 
-#> 2 4 6 
-#> 4 8 2
+#> 4 6 
+#> 8 3
 ```
 
 Export the randomisation list in a database compatible format with

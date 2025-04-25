@@ -64,13 +64,13 @@ randolist_to_db <- function(randolist,
 
   if(target_db == "REDCap"){
     if(!is.data.frame(rando_enc)){
-      stop("rando_encoding must be provided for REDCap")
+      stop("rando_enc must be provided for REDCap")
     }
     if(!"arm" %in% names(rando_enc)){
-      stop("rando_encoding must contain a column named 'arm'")
+      stop("rando_enc must contain a column named 'arm'")
     }
     if(!all(randolist$arm %in% rando_enc$arm)){
-      stop("rando_encoding must contain all arms in randolist")
+      stop("rando_enc must contain all arms in randolist")
     }
     out <- randolist |>
       select(all_of(stratavars), arm) |>
@@ -78,8 +78,8 @@ randolist_to_db <- function(randolist,
       select(-arm)
   }
   if(target_db == "secuTrial"){
-    if(!is.na(rando_enc)){
-      warning("rando_encoding ignored for secuTrial")
+    if(any(!is.na(rando_enc))){
+      warning("rando_enc ignored for secuTrial")
     }
     out <- randolist |>
       mutate(across(all_of(stratavars), ~ paste("value =", .x)),

@@ -7,7 +7,7 @@ test_that("structure as expected", {
   expect_s3_class(res1, "data.frame")
   expect_equal(ncol(res1), 5)
   expect_equal(names(res1),
-               c("seq_in_list", "block", "blocksize", "seq_in_block", "arm"))
+               c("seq_in_strata", "block_in_strata", "blocksize", "seq_in_block", "arm"))
 })
 
 test_that("seed produces consistent results (within session)", {
@@ -45,6 +45,6 @@ test_that("arm labels", {
 test_that("single block size works", {
   tmp <- blockrand(100, blocksizes = 2)
   expect_true(all(tmp$blocksize == 4))
-  expect_true(max(tmp$block) == 25)
+  expect_true(max(tmp$block_in_strata) == 25)
 })
 

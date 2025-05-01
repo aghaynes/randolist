@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![](https://img.shields.io/badge/dev%20version-0.0.2-blue.svg)](https://github.com/CTU-Bern/randolist)
+[![](https://img.shields.io/badge/dev%20version-0.0.3-blue.svg)](https://github.com/CTU-Bern/randolist)
 [![R-CMD-check](https://github.com/CTU-Bern/randolist/workflows/R-CMD-check/badge.svg)](https://github.com/CTU-Bern/randolist/actions)
 
 <!-- badges: end -->
@@ -47,47 +47,47 @@ summary(r)
 #> 
 #> ── Overall ──
 #> 
-#> Total number of randomisations:  100 
+#> Total number of randomisations:  104 
 #> Randomisation groups:  Trt1 Trt2 
 #> Randomisation ratio: 1:1 
 #> Randomisations to each arm: 1:1
 #> Trt1 Trt2 
-#>   50   50 
+#>   52   52 
 #> Block sizes:
 #>  2  4  6 
-#>  4 11  8
+#> 10  9  8
 #> ── Stratifier level ──
 #> Randomisation list is stratified by variables sex
 #> ── 1
 #> Randomisations per level of sex :
 #> Female   Male 
-#>     50     50 
+#>     52     52 
 #> Balance per level of sex :        
 #>          Trt1 Trt2
-#>   Female   25   25
-#>   Male     25   25
+#>   Female   26   26
+#>   Male     26   26
 #> 
 #> ── Stratum level ──
 #> 
 #> 2 strata are defined:
 #> 
 #> Female   Male 
-#>     50     50
+#>     52     52
 #> ── Female
-#> Number of randomisations:  50
+#> Number of randomisations:  52
 #> Trt1 Trt2 
-#>   25   25 
+#>   26   26 
 #> Block sizes: 
 #> 2 4 6 
-#> 2 4 5
+#> 6 4 4
 #> 
 #> ── Male
-#> Number of randomisations:  50
+#> Number of randomisations:  52
 #> Trt1 Trt2 
-#>   25   25 
+#>   26   26 
 #> Block sizes: 
 #> 2 4 6 
-#> 2 7 3
+#> 4 5 4
 ```
 
 Export the randomisation list in a database compatible format with

@@ -9,3 +9,4 @@ navbar:
     github:
       icon: fa-github
       href: https://github.com/CTU-Bern/randolist
+      target: _blank

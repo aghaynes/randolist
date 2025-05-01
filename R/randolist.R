@@ -33,10 +33,10 @@
 #' # example code
 #' randolist(10)
 #' # one stratifying variable
-#' randolist(10, strata = list(sex = factor(1:2, levels = 1:2, labels = c("M", "F"))))
+#' randolist(10, strata = list(sex = c("M", "F")))
 #' # two stratifying variables
-#' randolist(10, strata = list(sex = factor(1:2, levels = 1:2, labels = c("M", "F")),
-#'                             age = factor(1:2, levels = 1:2, labels = c("child", "adult"))))
+#' randolist(10, strata = list(sex = c("M", "F"),
+#'                             age = c("child", "adult")))
 #' # different arm labels
 #' randolist(10, arms = c("arm 1", "arm 2"))
 #'

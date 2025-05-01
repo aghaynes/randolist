@@ -18,7 +18,7 @@
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Create Randomization Lists From R">
 <meta name="description" content="Randomization lists are an integral component of randomized clinical trials. randolist provides tools to easily create such lists.">
 <meta property="og:description" content="Randomization lists are an integral component of randomized clinical trials. randolist provides tools to easily create such lists.">
-<meta property="og:image" content="https://ctu-bern.github.io/randolist/logo.png">
+<meta property="og:image" content="https://CTU-Bern.github.io/randolist/logo.png">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -44,6 +44,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/CTU-Bern/randolist"><span class="fa fa-github"></span></a></li>
       </ul>
 </div>
 
@@ -78,7 +79,7 @@
 </h2>
 <p>Generate the randomisation list itself with <code>randolist</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ctu-bern.github.io/randolist/">randolist</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ctu-bern.github.io/randolist/" class="external-link">randolist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/randolist.html">randolist</a></span><span class="op">(</span><span class="fl">50</span>, arms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Trt1"</span>, <span class="st">"Trt2"</span><span class="op">)</span>, strata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>sex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Female"</span>, <span class="st">"Male"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Create a short summary of the randomisation list with <code>summary</code>.</p>
@@ -172,7 +173,7 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/CTU-Bern/randolist" class="external-link"><img src="https://img.shields.io/badge/dev%20version-0.0.2-blue.svg"></a></li>
+<li><a href="https://github.com/CTU-Bern/randolist" class="external-link"><img src="https://img.shields.io/badge/dev%20version-0.0.3-blue.svg"></a></li>
 <li><a href="https://github.com/CTU-Bern/randolist/actions" class="external-link"><img src="https://github.com/CTU-Bern/randolist/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>

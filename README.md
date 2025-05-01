@@ -34,7 +34,7 @@ Generate the randomisation list itself with `randolist`.
 
 ``` r
 library(randolist)
-
+set.seed(123)
 r <- randolist(50, arms = c("Trt1", "Trt2"), strata = list(sex = c("Female", "Male")))
 ```
 
@@ -47,47 +47,47 @@ summary(r)
 #> 
 #> ── Overall ──
 #> 
-#> Total number of randomisations:  102 
+#> Total number of randomisations:  106 
 #> Randomisation groups:  Trt1 Trt2 
 #> Randomisation ratio: 1:1 
 #> Randomisations to each arm: 1:1
 #> Trt1 Trt2 
-#>   51   51 
+#>   53   53 
 #> Block sizes:
 #>  2  4  6 
-#>  5 14  6
+#>  9 13  6
 #> ── Stratifier level ──
 #> Randomisation list is stratified by variables sex
 #> ── 1
 #> Randomisations per level of sex :
 #> Female   Male 
-#>     52     50 
+#>     54     52 
 #> Balance per level of sex :        
 #>          Trt1 Trt2
-#>   Female   26   26
-#>   Male     25   25
+#>   Female   27   27
+#>   Male     26   26
 #> 
 #> ── Stratum level ──
 #> 
 #> 2 strata are defined:
 #> 
 #> Female   Male 
-#>     52     50
+#>     54     52
 #> ── Female
+#> Number of randomisations:  54
+#> Trt1 Trt2 
+#>   27   27 
+#> Block sizes: 
+#> 2 4 6 
+#> 5 5 4
+#> 
+#> ── Male
 #> Number of randomisations:  52
 #> Trt1 Trt2 
 #>   26   26 
 #> Block sizes: 
-#> 4 6 
-#> 7 4
-#> 
-#> ── Male
-#> Number of randomisations:  50
-#> Trt1 Trt2 
-#>   25   25 
-#> Block sizes: 
 #> 2 4 6 
-#> 5 7 2
+#> 4 8 2
 ```
 
 Export the randomisation list in a database compatible format with

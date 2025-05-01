@@ -1,6 +1,6 @@
 Package: randolist
 Title: Create Randomization Lists From R
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     c(person("Alan", "Haynes", "G", email = "alan.haynes@unibe.ch", 
              role = c("aut", "cre"),

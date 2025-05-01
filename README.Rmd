@@ -46,7 +46,7 @@ Generate the randomisation list itself with `randolist`.
 
 ```{r}
 library(randolist)
-
+set.seed(123)
 r <- randolist(50, arms = c("Trt1", "Trt2"), strata = list(sex = c("Female", "Male")))
 ```
 

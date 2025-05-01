@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![](https://img.shields.io/badge/dev%20version-0.0.2-blue.svg)](https://github.com/CTU-Bern/randolist)
+[![](https://img.shields.io/badge/dev%20version-0.0.3-blue.svg)](https://github.com/CTU-Bern/randolist)
 [![R-CMD-check](https://github.com/CTU-Bern/randolist/workflows/R-CMD-check/badge.svg)](https://github.com/CTU-Bern/randolist/actions)
 
 <!-- badges: end -->
@@ -34,7 +34,7 @@ Generate the randomisation list itself with `randolist`.
 
 ``` r
 library(randolist)
-
+set.seed(123)
 r <- randolist(50, arms = c("Trt1", "Trt2"), strata = list(sex = c("Female", "Male")))
 ```
 
@@ -47,47 +47,47 @@ summary(r)
 #> 
 #> ── Overall ──
 #> 
-#> Total number of randomisations:  104 
+#> Total number of randomisations:  106 
 #> Randomisation groups:  Trt1 Trt2 
 #> Randomisation ratio: 1:1 
 #> Randomisations to each arm: 1:1
 #> Trt1 Trt2 
-#>   52   52 
+#>   53   53 
 #> Block sizes:
 #>  2  4  6 
-#>  6 14  6
+#>  9 13  6
 #> ── Stratifier level ──
 #> Randomisation list is stratified by variables sex
 #> ── 1
 #> Randomisations per level of sex :
 #> Female   Male 
-#>     54     50 
+#>     54     52 
 #> Balance per level of sex :        
 #>          Trt1 Trt2
 #>   Female   27   27
-#>   Male     25   25
+#>   Male     26   26
 #> 
 #> ── Stratum level ──
 #> 
 #> 2 strata are defined:
 #> 
 #> Female   Male 
-#>     54     50
+#>     54     52
 #> ── Female
 #> Number of randomisations:  54
 #> Trt1 Trt2 
 #>   27   27 
 #> Block sizes: 
 #> 2 4 6 
-#> 4 7 3
+#> 5 5 4
 #> 
 #> ── Male
-#> Number of randomisations:  50
+#> Number of randomisations:  52
 #> Trt1 Trt2 
-#>   25   25 
+#>   26   26 
 #> Block sizes: 
 #> 2 4 6 
-#> 2 7 3
+#> 4 8 2
 ```
 
 Export the randomisation list in a database compatible format with

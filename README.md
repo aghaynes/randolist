@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![](https://img.shields.io/badge/dev%20version-0.0.2-blue.svg)](https://github.com/CTU-Bern/randolist)
+[![](https://img.shields.io/badge/dev%20version-0.0.3-blue.svg)](https://github.com/CTU-Bern/randolist)
 [![R-CMD-check](https://github.com/CTU-Bern/randolist/workflows/R-CMD-check/badge.svg)](https://github.com/CTU-Bern/randolist/actions)
 
 <!-- badges: end -->

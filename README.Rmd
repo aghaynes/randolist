@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# `randolist` <img src='man/figures/logo.png' align="right" width="200">
+# `randotools` <img src='man/figures/logo.png' align="right" width="200">
 
 <!-- badges: start -->
 

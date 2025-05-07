@@ -1,3 +1,9 @@
+# randolist 0.0.4
+
+* `randolist_to_db` : Move the randomisation result to the first column when exporting to REDCap
+* `summary` : Remove the use of cli for messages, as they do not appear in `sink`ed output
+* Add a vignette to show how to use the package
+
 # randolist 0.0.3
 
 * remove examples using factor from `randolist` helpfile.

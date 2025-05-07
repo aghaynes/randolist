@@ -1,31 +1,32 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `randolist` <img src='man/figures/logo.png' align="right" width="200">
+# `randotools` <img src='man/figures/logo.png' align="right" width="200">
 
 <!-- badges: start -->
 
-[![](https://img.shields.io/badge/dev%20version-0.0.4-blue.svg)](https://github.com/CTU-Bern/randolist)
-[![R-CMD-check](https://github.com/CTU-Bern/randolist/workflows/R-CMD-check/badge.svg)](https://github.com/CTU-Bern/randolist/actions)
+[![](https://img.shields.io/badge/dev%20version-0.0.4-blue.svg)](https://github.com/CTU-Bern/randotools)
+[![R-CMD-check](https://github.com/CTU-Bern/randotools/workflows/R-CMD-check/badge.svg)](https://github.com/CTU-Bern/randotools/actions)
 
 <!-- badges: end -->
 
-`randolist` contains home-grown functions for creating randomisation
-lists in R.
+`randotools` contains functions for creating randomisation lists, and
+other related tasks, in R.
 
 ## Installation
 
-You can install the development version of `randolist` from github with:
+You can install the development version of `randotools` from github
+with:
 
-<!-- install.packages("randolist") -->
+<!-- install.packages("randotools") -->
 
 ``` r
-remotes::install_github("CTU-Bern/randolist")
+remotes::install_github("CTU-Bern/randotools")
 ```
 
 <!-- Or from CTU Bern's package universe -->
 <!-- ``` r -->
-<!-- install.packages("randolist", repos = c('https://ctu-bern.r-universe.dev', 'https://cloud.r-project.org')) -->
+<!-- install.packages("randotools", repos = c('https://ctu-bern.r-universe.dev', 'https://cloud.r-project.org')) -->
 <!-- ``` -->
 
 ## Generating randomization lists
@@ -33,7 +34,7 @@ remotes::install_github("CTU-Bern/randolist")
 Generate the randomisation list itself with `randolist`.
 
 ``` r
-library(randolist)
+library(randotools)
 set.seed(123)
 r <- randolist(50, arms = c("Trt1", "Trt2"), strata = list(sex = c("Female", "Male")))
 ```

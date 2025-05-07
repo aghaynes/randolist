@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Create Randomization Lists From R • randolist</title>
+<title>Create Randomization Lists From R • randotools</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="icon" type="”image/svg+xml”" href="favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -16,8 +16,8 @@
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Create Randomization Lists From R">
-<meta name="description" content="Randomization lists are an integral component of randomized clinical trials. randolist provides tools to easily create such lists.">
-<meta property="og:description" content="Randomization lists are an integral component of randomized clinical trials. randolist provides tools to easily create such lists.">
+<meta name="description" content="Randomization lists are an integral component of randomized clinical trials. randotools provides tools to easily create such lists.">
+<meta property="og:description" content="Randomization lists are an integral component of randomized clinical trials. randotools provides tools to easily create such lists.">
 <meta property="og:image" content="https://CTU-Bern.github.io/randolist/logo.png">
 </head>
 <body>
@@ -26,7 +26,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="index.html">randolist</a>
+    <a class="navbar-brand me-2" href="index.html">randotools</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4</small>
 
@@ -37,7 +37,7 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item"><a class="nav-link" href="articles/randolist.html">Get started</a></li>
+<li class="nav-item"><a class="nav-link" href="articles/randotools.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
@@ -86,11 +86,8 @@
 <p>Create a short summary of the randomisation list with <code>summary</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">r</span><span class="op">)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; ── Randomisation list report ───────────────────────────────────────────────────</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; ── Overall ──</span></span>
-<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ---- Randomisation list report ----</span></span>
+<span><span class="co">#&gt; -- Overall</span></span>
 <span><span class="co">#&gt; Total number of randomisations:  106 </span></span>
 <span><span class="co">#&gt; Randomisation groups:  Trt1 Trt2 </span></span>
 <span><span class="co">#&gt; Randomisation ratio: 1:1 </span></span>
@@ -99,10 +96,10 @@
 <span><span class="co">#&gt;   53   53 </span></span>
 <span><span class="co">#&gt; Block sizes:</span></span>
 <span><span class="co">#&gt;  2  4  6 </span></span>
-<span><span class="co">#&gt;  9 13  6</span></span>
-<span><span class="co">#&gt; ── Stratifier level ──</span></span>
-<span><span class="co">#&gt; Randomisation list is stratified by variables sex</span></span>
-<span><span class="co">#&gt; ── 1</span></span>
+<span><span class="co">#&gt;  9 13  6 </span></span>
+<span><span class="co">#&gt; -- Stratifier level </span></span>
+<span><span class="co">#&gt; Randomisation list is stratified by variables sex </span></span>
+<span><span class="co">#&gt; -  1 </span></span>
 <span><span class="co">#&gt; Randomisations per level of sex :</span></span>
 <span><span class="co">#&gt; Female   Male </span></span>
 <span><span class="co">#&gt;     54     52 </span></span>
@@ -110,22 +107,19 @@
 <span><span class="co">#&gt;          Trt1 Trt2</span></span>
 <span><span class="co">#&gt;   Female   27   27</span></span>
 <span><span class="co">#&gt;   Male     26   26</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; ── Stratum level ──</span></span>
-<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; -- Stratum level </span></span>
 <span><span class="co">#&gt; 2 strata are defined:</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Female   Male </span></span>
-<span><span class="co">#&gt;     54     52</span></span>
-<span><span class="co">#&gt; ── Female</span></span>
+<span><span class="co">#&gt;     54     52 </span></span>
+<span><span class="co">#&gt; -  Female </span></span>
 <span><span class="co">#&gt; Number of randomisations:  54</span></span>
 <span><span class="co">#&gt; Trt1 Trt2 </span></span>
 <span><span class="co">#&gt;   27   27 </span></span>
 <span><span class="co">#&gt; Block sizes: </span></span>
 <span><span class="co">#&gt; 2 4 6 </span></span>
-<span><span class="co">#&gt; 5 5 4</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; ── Male</span></span>
+<span><span class="co">#&gt; 5 5 4 </span></span>
+<span><span class="co">#&gt; -  Male </span></span>
 <span><span class="co">#&gt; Number of randomisations:  52</span></span>
 <span><span class="co">#&gt; Trt1 Trt2 </span></span>
 <span><span class="co">#&gt;   26   26 </span></span>
@@ -160,7 +154,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing randolist</a></li>
+<li><a href="authors.html#citation">Citing randotools</a></li>
 </ul>
 </div>
 
@@ -174,7 +168,7 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/CTU-Bern/randolist" class="external-link"><img src="https://img.shields.io/badge/dev%20version-0.0.3-blue.svg"></a></li>
+<li><a href="https://github.com/CTU-Bern/randolist" class="external-link"><img src="https://img.shields.io/badge/dev%20version-0.0.4-blue.svg"></a></li>
 <li><a href="https://github.com/CTU-Bern/randolist/actions" class="external-link"><img src="https://github.com/CTU-Bern/randolist/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>

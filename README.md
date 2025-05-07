@@ -42,11 +42,8 @@ Create a short summary of the randomisation list with `summary`.
 
 ``` r
 summary(r)
-#> 
-#> ── Randomisation list report ───────────────────────────────────────────────────
-#> 
-#> ── Overall ──
-#> 
+#> ---- Randomisation list report ----
+#> -- Overall
 #> Total number of randomisations:  106 
 #> Randomisation groups:  Trt1 Trt2 
 #> Randomisation ratio: 1:1 
@@ -55,10 +52,10 @@ summary(r)
 #>   53   53 
 #> Block sizes:
 #>  2  4  6 
-#>  9 13  6
-#> ── Stratifier level ──
-#> Randomisation list is stratified by variables sex
-#> ── 1
+#>  9 13  6 
+#> -- Stratifier level 
+#> Randomisation list is stratified by variables sex 
+#> -  1 
 #> Randomisations per level of sex :
 #> Female   Male 
 #>     54     52 
@@ -66,22 +63,19 @@ summary(r)
 #>          Trt1 Trt2
 #>   Female   27   27
 #>   Male     26   26
-#> 
-#> ── Stratum level ──
-#> 
+#> -- Stratum level 
 #> 2 strata are defined:
 #> 
 #> Female   Male 
-#>     54     52
-#> ── Female
+#>     54     52 
+#> -  Female 
 #> Number of randomisations:  54
 #> Trt1 Trt2 
 #>   27   27 
 #> Block sizes: 
 #> 2 4 6 
-#> 5 5 4
-#> 
-#> ── Male
+#> 5 5 4 
+#> -  Male 
 #> Number of randomisations:  52
 #> Trt1 Trt2 
 #>   26   26 

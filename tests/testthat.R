@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(randolist)
+library(randotools)
 
-test_check("randolist")
+test_check("randotools")

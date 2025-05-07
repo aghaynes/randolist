@@ -16,7 +16,7 @@
 #' to `randolist`, and a variable with the name required by the
 #' database with the values that map to those in `arm`. See the examples.
 #'
-#' @importFrom dplyr select rename left_join mutate across all_of n
+#' @importFrom dplyr select rename left_join mutate across all_of n relocate
 #' @importFrom rlang arg_match :=
 #' @export
 #'
@@ -72,10 +72,12 @@ randolist_to_db <- function(randolist,
     if(!all(randolist$arm %in% rando_enc$arm)){
       stop("rando_enc must contain all arms in randolist")
     }
+    randovar <- names(rando_enc)[names(rando_enc) != "arm"]
     out <- randolist |>
       select(all_of(stratavars), arm) |>
       left_join(rando_enc, by = "arm") |>
-      select(-arm)
+      select(-arm) |>
+      relocate(!!randovar)
   }
   if(target_db == "secuTrial"){
     if(any(!is.na(rando_enc))){

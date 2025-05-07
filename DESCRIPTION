@@ -1,12 +1,12 @@
-Package: randolist
+Package: randotools
 Title: Create Randomization Lists From R
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: 
     c(person("Alan", "Haynes", "G", email = "alan.haynes@unibe.ch", 
              role = c("aut", "cre"),
              comment = c(ORCID = "0000-0003-1374-081X"))
            )
-Description: Randomization lists are an integral component of randomized clinical trials. randolist provides tools to easily create such lists.
+Description: Randomization lists are an integral component of randomized clinical trials. randotools provides tools to easily create such lists.
 License: GPL (>= 3)
 Url: https://ctu-bern.github.io/randolist/, https://github.com/CTU-Bern/randolist
 Encoding: UTF-8

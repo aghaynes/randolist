@@ -1,8 +1,9 @@
 pandoc: 3.1.11
 pkgdown: 2.1.2
 pkgdown_sha: ~
-articles: {}
-last_built: 2025-05-01T13:38Z
+articles:
+  randolist: randolist.html
+last_built: 2025-05-07T06:58Z
 urls:
   reference: https://CTU-Bern.github.io/randolist/reference
   article: https://CTU-Bern.github.io/randolist/articles

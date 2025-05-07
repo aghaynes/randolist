@@ -22,16 +22,16 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-`randolist` contains home-grown functions for creating randomisation lists in R.
+`randotools` contains functions for creating randomisation lists, and other related tasks, in R.
 
 ## Installation
 
-You can install the development version of `randolist` from github with:
+You can install the development version of `randotools` from github with:
 
 <!-- install.packages("randolist") -->
 
 ``` r
-remotes::install_github("CTU-Bern/randolist")
+remotes::install_github("CTU-Bern/randotools")
 ```
 
 <!-- Or from CTU Bern's package universe -->
@@ -45,7 +45,7 @@ remotes::install_github("CTU-Bern/randolist")
 Generate the randomisation list itself with `randolist`.
 
 ```{r}
-library(randolist)
+library(randotools)
 set.seed(123)
 r <- randolist(50, arms = c("Trt1", "Trt2"), strata = list(sex = c("Female", "Male")))
 ```

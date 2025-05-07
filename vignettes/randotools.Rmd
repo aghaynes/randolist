@@ -1,8 +1,8 @@
 ---
-title: "randolist"
+title: "randotools"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{randolist}
+  %\VignetteIndexEntry{randotools}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,11 +15,11 @@ knitr::opts_chunk$set(
 ```
 
 
-Randomisation is one of the key aspects of clinical trials, ensuring that treatment groups are balanced and that the results are not biased. The `randolist` package provides functions to create randomisation lists in R, with a focus on flexibility and ease of use.
+Randomisation is one of the key aspects of clinical trials, ensuring that treatment groups are balanced and that the results are not biased. The `randotools` package provides functions to create randomisation lists in R, with a focus on flexibility and ease of use.
 
 
 ```{r setup}
-library(randolist)
+library(randotools)
 ```
 
 ## Creating randomization lists

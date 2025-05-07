@@ -87,10 +87,10 @@ print.randolistsum <- function(x, ...){
   cat("-- Overall\n")
 
   cat("Total number of randomisations: ", x$n_rando, "\n")
-  cat("Randomisation groups: ", names(x$arms), "\n")
+  cat("Randomisation groups: ", paste(names(x$arms), collapse = " : "), "\n")
   cat("Randomisation ratio:", x$ratio, "\n")
 
-  cat("Randomisations to each arm:", x$ratio)
+  cat("Randomisations to each arm:")
   print(x$arms)
 
   cat("Block sizes:")

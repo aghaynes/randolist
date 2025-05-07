@@ -69,7 +69,7 @@
 <p>You can install the development version of <code>randolist</code> from github with:</p>
 <!-- install.packages("randolist") -->
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"CTU-Bern/randolist"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"CTU-Bern/randolist"</span><span class="op">)</span></span></code></pre></div>
 <!-- Or from CTU Bern's package universe -->
 <!-- ``` r -->
 <!-- install.packages("randolist", repos = c('https://ctu-bern.r-universe.dev', 'https://cloud.r-project.org')) -->
@@ -86,8 +86,11 @@
 <p>Create a short summary of the randomisation list with <code>summary</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">r</span><span class="op">)</span></span>
-<span><span class="co">#&gt; ---- Randomisation list report ----</span></span>
-<span><span class="co">#&gt; -- Overall</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ── Randomisation list report ───────────────────────────────────────────────────</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ── Overall ──</span></span>
+<span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Total number of randomisations:  106 </span></span>
 <span><span class="co">#&gt; Randomisation groups:  Trt1 Trt2 </span></span>
 <span><span class="co">#&gt; Randomisation ratio: 1:1 </span></span>
@@ -96,10 +99,10 @@
 <span><span class="co">#&gt;   53   53 </span></span>
 <span><span class="co">#&gt; Block sizes:</span></span>
 <span><span class="co">#&gt;  2  4  6 </span></span>
-<span><span class="co">#&gt;  9 13  6 </span></span>
-<span><span class="co">#&gt; -- Stratifier level </span></span>
-<span><span class="co">#&gt; Randomisation list is stratified by variables sex </span></span>
-<span><span class="co">#&gt; -  1 </span></span>
+<span><span class="co">#&gt;  9 13  6</span></span>
+<span><span class="co">#&gt; ── Stratifier level ──</span></span>
+<span><span class="co">#&gt; Randomisation list is stratified by variables sex</span></span>
+<span><span class="co">#&gt; ── 1</span></span>
 <span><span class="co">#&gt; Randomisations per level of sex :</span></span>
 <span><span class="co">#&gt; Female   Male </span></span>
 <span><span class="co">#&gt;     54     52 </span></span>
@@ -107,19 +110,22 @@
 <span><span class="co">#&gt;          Trt1 Trt2</span></span>
 <span><span class="co">#&gt;   Female   27   27</span></span>
 <span><span class="co">#&gt;   Male     26   26</span></span>
-<span><span class="co">#&gt; -- Stratum level </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ── Stratum level ──</span></span>
+<span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; 2 strata are defined:</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Female   Male </span></span>
-<span><span class="co">#&gt;     54     52 </span></span>
-<span><span class="co">#&gt; -  Female </span></span>
+<span><span class="co">#&gt;     54     52</span></span>
+<span><span class="co">#&gt; ── Female</span></span>
 <span><span class="co">#&gt; Number of randomisations:  54</span></span>
 <span><span class="co">#&gt; Trt1 Trt2 </span></span>
 <span><span class="co">#&gt;   27   27 </span></span>
 <span><span class="co">#&gt; Block sizes: </span></span>
 <span><span class="co">#&gt; 2 4 6 </span></span>
-<span><span class="co">#&gt; 5 5 4 </span></span>
-<span><span class="co">#&gt; -  Male </span></span>
+<span><span class="co">#&gt; 5 5 4</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ── Male</span></span>
 <span><span class="co">#&gt; Number of randomisations:  52</span></span>
 <span><span class="co">#&gt; Trt1 Trt2 </span></span>
 <span><span class="co">#&gt;   26   26 </span></span>
@@ -168,7 +174,7 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/CTU-Bern/randolist" class="external-link"><img src="https://img.shields.io/badge/dev%20version-0.0.4-blue.svg"></a></li>
+<li><a href="https://github.com/CTU-Bern/randolist" class="external-link"><img src="https://img.shields.io/badge/dev%20version-0.0.3-blue.svg"></a></li>
 <li><a href="https://github.com/CTU-Bern/randolist/actions" class="external-link"><img src="https://github.com/CTU-Bern/randolist/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>

@@ -17,8 +17,8 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
-`r badger::badge_custom("dev version", as.character(packageVersion("randolist")), "blue", "https://github.com/CTU-Bern/randolist")`
-[![R-CMD-check](https://github.com/CTU-Bern/randolist/workflows/R-CMD-check/badge.svg)](https://github.com/CTU-Bern/randolist/actions)
+`r badger::badge_custom("dev version", as.character(packageVersion("randotools")), "blue", "https://github.com/CTU-Bern/randotools")`
+[![R-CMD-check](https://github.com/CTU-Bern/randotools/workflows/R-CMD-check/badge.svg)](https://github.com/CTU-Bern/randotools/actions)
 
 <!-- badges: end -->
 
@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 
 You can install the development version of `randotools` from github with:
 
-<!-- install.packages("randolist") -->
+<!-- install.packages("randotools") -->
 
 ``` r
 remotes::install_github("CTU-Bern/randotools")
@@ -37,7 +37,7 @@ remotes::install_github("CTU-Bern/randotools")
 <!-- Or from CTU Bern's package universe -->
 
 <!-- ``` r -->
-<!-- install.packages("randolist", repos = c('https://ctu-bern.r-universe.dev', 'https://cloud.r-project.org')) -->
+<!-- install.packages("randotools", repos = c('https://ctu-bern.r-universe.dev', 'https://cloud.r-project.org')) -->
 <!-- ``` -->
 
 ## Generating randomization lists

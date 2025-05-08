@@ -46,9 +46,9 @@ summary(r)
 #> ---- Randomisation list report ----
 #> -- Overall
 #> Total number of randomisations:  106 
-#> Randomisation groups:  Trt1 Trt2 
+#> Randomisation groups:  Trt1 : Trt2 
 #> Randomisation ratio: 1:1 
-#> Randomisations to each arm: 1:1
+#> Randomisations to each arm:
 #> Trt1 Trt2 
 #>   53   53 
 #> Block sizes:

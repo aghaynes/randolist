@@ -3,7 +3,7 @@ pkgdown: 2.1.2
 pkgdown_sha: ~
 articles:
   randotools: randotools.html
-last_built: 2025-05-07T14:14Z
+last_built: 2025-05-08T12:26Z
 urls:
   reference: https://CTU-Bern.github.io/randolist/reference
   article: https://CTU-Bern.github.io/randolist/articles

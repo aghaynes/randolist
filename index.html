@@ -55,24 +55,24 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="randolist-">
-<code>randolist</code> <a class="anchor" aria-label="anchor" href="#randolist-"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="randotools-">
+<code>randotools</code> <a class="anchor" aria-label="anchor" href="#randotools-"></a>
 </h1>
 </div>
 <!-- badges: start -->
 
 <!-- badges: end -->
-<p><code>randolist</code> contains home-grown functions for creating randomisation lists in R.</p>
+<p><code>randotools</code> contains functions for creating randomisation lists, and other related tasks, in R.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of <code>randolist</code> from github with:</p>
-<!-- install.packages("randolist") -->
+<p>You can install the development version of <code>randotools</code> from github with:</p>
+<!-- install.packages("randotools") -->
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"CTU-Bern/randolist"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"CTU-Bern/randotools"</span><span class="op">)</span></span></code></pre></div>
 <!-- Or from CTU Bern's package universe -->
 <!-- ``` r -->
-<!-- install.packages("randolist", repos = c('https://ctu-bern.r-universe.dev', 'https://cloud.r-project.org')) -->
+<!-- install.packages("randotools", repos = c('https://ctu-bern.r-universe.dev', 'https://cloud.r-project.org')) -->
 <!-- ``` -->
 </div>
 <div class="section level2">
@@ -80,7 +80,7 @@
 </h2>
 <p>Generate the randomisation list itself with <code>randolist</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ctu-bern.github.io/randolist/" class="external-link">randolist</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ctu-bern.github.io/randolist/" class="external-link">randotools</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/randolist.html">randolist</a></span><span class="op">(</span><span class="fl">50</span>, arms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Trt1"</span>, <span class="st">"Trt2"</span><span class="op">)</span>, strata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>sex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Female"</span>, <span class="st">"Male"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Create a short summary of the randomisation list with <code>summary</code>.</p>
@@ -89,9 +89,9 @@
 <span><span class="co">#&gt; ---- Randomisation list report ----</span></span>
 <span><span class="co">#&gt; -- Overall</span></span>
 <span><span class="co">#&gt; Total number of randomisations:  106 </span></span>
-<span><span class="co">#&gt; Randomisation groups:  Trt1 Trt2 </span></span>
+<span><span class="co">#&gt; Randomisation groups:  Trt1 : Trt2 </span></span>
 <span><span class="co">#&gt; Randomisation ratio: 1:1 </span></span>
-<span><span class="co">#&gt; Randomisations to each arm: 1:1</span></span>
+<span><span class="co">#&gt; Randomisations to each arm:</span></span>
 <span><span class="co">#&gt; Trt1 Trt2 </span></span>
 <span><span class="co">#&gt;   53   53 </span></span>
 <span><span class="co">#&gt; Block sizes:</span></span>
@@ -168,8 +168,8 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/CTU-Bern/randolist" class="external-link"><img src="https://img.shields.io/badge/dev%20version-0.0.4-blue.svg"></a></li>
-<li><a href="https://github.com/CTU-Bern/randolist/actions" class="external-link"><img src="https://github.com/CTU-Bern/randolist/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://github.com/CTU-Bern/randotools" class="external-link"><img src="https://img.shields.io/badge/dev%20version-0.0.4-blue.svg"></a></li>
+<li><a href="https://github.com/CTU-Bern/randotools/actions" class="external-link"><img src="https://github.com/CTU-Bern/randotools/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
 

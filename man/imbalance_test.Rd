@@ -42,7 +42,7 @@ data(rando_balance)
 imbalance_test(rando_balance, "rando_res")
 imb <- imbalance_test(rando_balance, "rando_res", stratavars = "strat1")
 imbalance_test(rando_balance, "rando_res", stratavars = c("strat1", "strat2"))
-imbalance_test(rando_balance, "rando_res2", stratavars = c("strat1", "strat2"))
+imb <- imbalance_test(rando_balance, "rando_res2", stratavars = c("strat1", "strat2"))
 }
 \seealso{
 \code{\link[=imbalance_test_plot]{imbalance_test_plot()}}

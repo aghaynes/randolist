@@ -12,6 +12,7 @@
 #' @importFrom ggplot2 geom_histogram geom_vline
 #' @importFrom patchwork wrap_plots
 #' @seealso [imbalance_test()]
+#' @export
 #' @examples
 #' # example code
 #' data(rando_balance)

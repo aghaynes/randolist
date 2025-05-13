@@ -1,0 +1,88 @@
+---
+title: "Assessing imbalance"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Assessing imbalance}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+When running a trial, it may be useful to periodically check how well balanced the randomisation is. This is especially true where procedures relying on random elements such as minimization are used instead of pre-defined randomisation lists.
+
+`randotools` provides a couple of tools to assist in assessing how well balanced the randomisation has been performed.
+
+```{r setup}
+library(randotools)
+```
+
+### Dataset
+
+As an example, we will use a dataset that is included within the package:
+
+```{r}
+data(rando_balance)
+summary(rando_balance)
+```
+
+The dataset contains four variables:- two stratification variables, and two randomisation variables. One randomisation variable, `rando_res` has balanced randomisation. The other, `rando_res2`, has a small degree of imbalance.
+
+```{r}
+table(rando_balance$rando_res)
+table(rando_balance$rando_res2)
+```
+
+
+### Sequential plots
+
+The `imbalance_seq_plots` function aids in plotting the imbalance as a function of randomisation number (assuming that the data is sorted from oldest to newest). 
+
+This function produces up to 6 plots, so the `patchwork` package comes in useful for combining the plots via `wrap_plots`.
+
+```{r, echo=FALSE}
+set.seed(134)
+```
+
+
+```{r, fig.width=7, message=FALSE}
+library(patchwork)
+imbalance_seq_plots(rando_balance, 
+                    randovar = "rando_res") |> 
+  wrap_plots(ncol = 2)
+```
+
+On the left we see the balance in the observed data. On the right, we see a simulated dataset with completely random assignment. We would generally want the observed curve to be below that of the randomly generated data.
+
+Where stratification variables are included, additional plots are shown with lines for each level of the the stratification variable(s) (the second row) and the specific strata (the combination of each stratification variable; the last row).
+
+```{r, fig.width=7, fig.height=9, message=FALSE}
+imbalance_seq_plots(rando_balance, 
+                    randovar = "rando_res",
+                    stratavars = c("strat1", "strat2")) |> 
+  wrap_plots(ncol = 2)
+```
+
+### Testing imbalance
+
+We also provide a permutation-type test, and accompanying plot, for comparing the observed randomisation imbalance with multiple simulated datasets. The null hypothesis for the test is that imbalance is lower or equal in the random data than relative to observed data. As such, we want a small p-value.
+
+```{r, message=FALSE}
+imb <- imbalance_test(rando_balance, 
+                      randovar = "rando_res2",
+                      stratavars = c("strat1", "strat2"))
+imb
+```
+
+The corresponding plots show the frequency of imbalance values in the random datasets (the bars). The red vertical line indicates that from the observed data. Ideally, the observed line would be to the left of the plot. The p-value is indicated bottom right.
+
+```{r, fig.height=9, fig.width = 4}
+imbalance_test_plot(imb)
+```
+
+

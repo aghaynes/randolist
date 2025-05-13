@@ -1,12 +1,17 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://CTU-Bern.github.io/randolist/404.html</loc></url>
 <url><loc>https://CTU-Bern.github.io/randolist/LICENSE.html</loc></url>
+<url><loc>https://CTU-Bern.github.io/randolist/articles/imbalance.html</loc></url>
 <url><loc>https://CTU-Bern.github.io/randolist/articles/index.html</loc></url>
 <url><loc>https://CTU-Bern.github.io/randolist/articles/randotools.html</loc></url>
 <url><loc>https://CTU-Bern.github.io/randolist/authors.html</loc></url>
 <url><loc>https://CTU-Bern.github.io/randolist/index.html</loc></url>
 <url><loc>https://CTU-Bern.github.io/randolist/news/index.html</loc></url>
+<url><loc>https://CTU-Bern.github.io/randolist/reference/imbalance_seq_plots.html</loc></url>
+<url><loc>https://CTU-Bern.github.io/randolist/reference/imbalance_test.html</loc></url>
+<url><loc>https://CTU-Bern.github.io/randolist/reference/imbalance_test_plot.html</loc></url>
 <url><loc>https://CTU-Bern.github.io/randolist/reference/index.html</loc></url>
+<url><loc>https://CTU-Bern.github.io/randolist/reference/rando_balance.html</loc></url>
 <url><loc>https://CTU-Bern.github.io/randolist/reference/randolist.html</loc></url>
 <url><loc>https://CTU-Bern.github.io/randolist/reference/randolist_to_db.html</loc></url>
 <url><loc>https://CTU-Bern.github.io/randolist/reference/summary.randolist.html</loc></url>

@@ -9,7 +9,7 @@ to generate randomisation lists simply, via (optionally) stratified block random
 
     <a class="navbar-brand me-2" href="../index.html">randotools</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,6 +19,10 @@ to generate randomisation lists simply, via (optionally) stratified block random
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../articles/randotools.html">Get started</a></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/imbalance.html">Assessing imbalance</a></li>
+  </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
@@ -102,41 +106,41 @@ block.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># example code</span></span></span>
 <span class="r-in"><span><span class="fu">randolist</span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    seq_in_strata block_in_strata blocksize seq_in_block arm</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1              1               1         4            1   A</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2              2               1         4            2   B</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3              3               1         4            3   A</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4              4               1         4            4   B</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5              5               2         2            1   B</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6              6               2         2            2   A</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7              7               3         6            1   A</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8              8               3         6            2   B</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9              9               3         6            3   B</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10            10               3         6            4   A</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11            11               3         6            5   A</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12            12               3         6            6   B</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1              1               1         4            1   B</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2              2               1         4            2   A</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3              3               1         4            3   B</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4              4               1         4            4   A</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5              5               2         6            1   B</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6              6               2         6            2   A</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7              7               2         6            3   A</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8              8               2         6            4   A</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9              9               2         6            5   B</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10            10               2         6            6   B</span>
 <span class="r-in"><span><span class="co"># one stratifying variable</span></span></span>
 <span class="r-in"><span><span class="fu">randolist</span><span class="op">(</span><span class="fl">10</span>, strata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>sex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"M"</span>, <span class="st">"F"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    stratum seq_in_strata block_in_strata blocksize seq_in_block arm sex</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1        1             1               1         4            1   A   M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2        1             2               1         4            2   B   M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3        1             3               1         4            3   A   M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4        1             4               1         4            4   B   M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5        1             5               2         4            1   B   M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6        1             6               2         4            2   A   M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7        1             7               2         4            3   A   M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8        1             8               2         4            4   B   M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9        1             9               3         2            1   A   M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10       1            10               3         2            2   B   M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11       2             1               1         4            1   A   F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12       2             2               1         4            2   B   F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13       2             3               1         4            3   A   F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14       2             4               1         4            4   B   F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15       2             5               2         6            1   B   F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16       2             6               2         6            2   A   F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17       2             7               2         6            3   A   F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18       2             8               2         6            4   A   F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19       2             9               2         6            5   B   F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20       2            10               2         6            6   B   F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1        1             1               1         2            1   B   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        1             2               1         2            2   A   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3        1             3               2         6            1   A   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4        1             4               2         6            2   B   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        1             5               2         6            3   B   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6        1             6               2         6            4   A   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7        1             7               2         6            5   A   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8        1             8               2         6            6   B   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9        1             9               3         4            1   A   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10       1            10               3         4            2   B   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11       1            11               3         4            3   A   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12       1            12               3         4            4   B   M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13       2             1               1         4            1   B   F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14       2             2               1         4            2   A   F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15       2             3               1         4            3   B   F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16       2             4               1         4            4   A   F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17       2             5               2         6            1   A   F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18       2             6               2         6            2   B   F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19       2             7               2         6            3   A   F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20       2             8               2         6            4   B   F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21       2             9               2         6            5   A   F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22       2            10               2         6            6   B   F</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    strata_txt</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1           M</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2           M</span>
@@ -148,8 +152,8 @@ block.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 8           M</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 9           M</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10          M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11          F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12          F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11          M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12          M</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13          F</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14          F</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15          F</span>
@@ -158,50 +162,56 @@ block.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 18          F</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 19          F</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 20          F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21          F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22          F</span>
 <span class="r-in"><span><span class="co"># two stratifying variables</span></span></span>
 <span class="r-in"><span><span class="fu">randolist</span><span class="op">(</span><span class="fl">10</span>, strata <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>sex <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"M"</span>, <span class="st">"F"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>                            age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"child"</span>, <span class="st">"adult"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    stratum seq_in_strata block_in_strata blocksize seq_in_block arm sex   age</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1        1             1               1         2            1   B   M child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2        1             2               1         2            2   A   M child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3        1             3               2         4            1   A   M child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4        1             4               2         4            2   A   M child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5        1             5               2         4            3   B   M child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6        1             6               2         4            4   B   M child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7        1             7               3         4            1   A   M child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8        1             8               3         4            2   A   M child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9        1             9               3         4            3   B   M child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10       1            10               3         4            4   B   M child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11       2             1               1         4            1   B   F child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12       2             2               1         4            2   B   F child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13       2             3               1         4            3   A   F child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14       2             4               1         4            4   A   F child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15       2             5               2         6            1   A   F child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16       2             6               2         6            2   A   F child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17       2             7               2         6            3   B   F child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18       2             8               2         6            4   B   F child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19       2             9               2         6            5   A   F child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20       2            10               2         6            6   B   F child</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21       3             1               1         4            1   B   M adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1        1             1               1         4            1   B   M child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        1             2               1         4            2   A   M child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3        1             3               1         4            3   A   M child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4        1             4               1         4            4   B   M child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        1             5               2         4            1   B   M child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6        1             6               2         4            2   B   M child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7        1             7               2         4            3   A   M child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8        1             8               2         4            4   A   M child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9        1             9               3         2            1   A   M child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10       1            10               3         2            2   B   M child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11       2             1               1         2            1   B   F child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12       2             2               1         2            2   A   F child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13       2             3               2         4            1   B   F child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14       2             4               2         4            2   B   F child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15       2             5               2         4            3   A   F child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16       2             6               2         4            4   A   F child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17       2             7               3         4            1   A   F child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18       2             8               3         4            2   A   F child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19       2             9               3         4            3   B   F child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20       2            10               3         4            4   B   F child</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21       3             1               1         4            1   A   M adult</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 22       3             2               1         4            2   A   M adult</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 23       3             3               1         4            3   B   M adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24       3             4               1         4            4   A   M adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25       3             5               2         6            1   A   M adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26       3             6               2         6            2   A   M adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27       3             7               2         6            3   B   M adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28       3             8               2         6            4   B   M adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29       3             9               2         6            5   B   M adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30       3            10               2         6            6   A   M adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31       4             1               1         4            1   A   F adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32       4             2               1         4            2   B   F adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33       4             3               1         4            3   A   F adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34       4             4               1         4            4   B   F adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35       4             5               2         6            1   A   F adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36       4             6               2         6            2   B   F adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37       4             7               2         6            3   B   F adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38       4             8               2         6            4   B   F adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39       4             9               2         6            5   A   F adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40       4            10               2         6            6   A   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24       3             4               1         4            4   B   M adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25       3             5               2         4            1   B   M adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26       3             6               2         4            2   B   M adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27       3             7               2         4            3   A   M adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28       3             8               2         4            4   A   M adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29       3             9               3         4            1   A   M adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30       3            10               3         4            2   A   M adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31       3            11               3         4            3   B   M adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32       3            12               3         4            4   B   M adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33       4             1               1         4            1   A   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34       4             2               1         4            2   A   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35       4             3               1         4            3   B   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36       4             4               1         4            4   B   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37       4             5               2         2            1   B   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38       4             6               2         2            2   A   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39       4             7               3         6            1   A   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40       4             8               3         6            2   B   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41       4             9               3         6            3   B   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42       4            10               3         6            4   A   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43       4            11               3         6            5   B   F adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44       4            12               3         6            6   A   F adult</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    strata_txt</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    M; child</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    M; child</span>
@@ -233,8 +243,8 @@ block.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 28   M; adult</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 29   M; adult</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 30   M; adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31   F; adult</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32   F; adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31   M; adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32   M; adult</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 33   F; adult</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 34   F; adult</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 35   F; adult</span>
@@ -243,17 +253,21 @@ block.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 38   F; adult</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 39   F; adult</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 40   F; adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41   F; adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42   F; adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43   F; adult</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44   F; adult</span>
 <span class="r-in"><span><span class="co"># different arm labels</span></span></span>
 <span class="r-in"><span><span class="fu">randolist</span><span class="op">(</span><span class="fl">10</span>, arms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"arm 1"</span>, <span class="st">"arm 2"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    seq_in_strata block_in_strata blocksize seq_in_block   arm</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1              1               1         6            1 arm 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2              2               1         6            2 arm 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3              3               1         6            3 arm 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4              4               1         6            4 arm 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5              5               1         6            5 arm 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6              6               1         6            6 arm 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7              7               2         2            1 arm 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8              8               2         2            2 arm 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1              1               1         4            1 arm 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2              2               1         4            2 arm 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3              3               1         4            3 arm 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4              4               1         4            4 arm 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5              5               2         4            1 arm 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6              6               2         4            2 arm 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7              7               2         4            3 arm 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8              8               2         4            4 arm 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 9              9               3         4            1 arm 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10            10               3         4            2 arm 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11            11               3         4            3 arm 1</span>
@@ -263,17 +277,20 @@ block.</p>
 <span class="r-in"><span><span class="fu">randolist</span><span class="op">(</span><span class="fl">10</span>, arms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"arm 1"</span>, <span class="st">"arm 1"</span>, <span class="st">"arm 2"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    seq_in_strata block_in_strata blocksize seq_in_block   arm</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1              1               1         6            1 arm 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2              2               1         6            2 arm 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3              3               1         6            3 arm 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2              2               1         6            2 arm 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3              3               1         6            3 arm 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4              4               1         6            4 arm 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5              5               1         6            5 arm 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6              6               1         6            6 arm 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7              7               2         6            1 arm 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8              8               2         6            2 arm 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9              9               2         6            3 arm 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10            10               2         6            4 arm 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11            11               2         6            5 arm 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12            12               2         6            6 arm 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7              7               2         9            1 arm 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8              8               2         9            2 arm 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9              9               2         9            3 arm 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10            10               2         9            4 arm 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11            11               2         9            5 arm 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12            12               2         9            6 arm 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13            13               2         9            7 arm 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14            14               2         9            8 arm 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15            15               2         9            9 arm 1</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

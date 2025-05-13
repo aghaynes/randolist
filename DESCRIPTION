@@ -1,6 +1,6 @@
 Package: randotools
 Title: Create Randomization Lists From R
-Version: 0.0.4
+Version: 0.1.0
 Authors@R: 
     c(person("Alan", "Haynes", "G", email = "alan.haynes@unibe.ch", 
              role = c("aut", "cre"),
@@ -16,6 +16,9 @@ Imports:
     cli,
     dplyr,
     glue,
+    ggplot2,
+    patchwork,
+    purrr,
     rlang
 Suggests: 
     knitr,
@@ -24,3 +27,6 @@ Suggests:
 Config/testthat/edition: 3
 URL: https://ctu-bern.github.io/randolist/
 VignetteBuilder: knitr
+Depends: 
+    R (>= 3.5)
+LazyData: true

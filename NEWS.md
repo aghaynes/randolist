@@ -1,3 +1,7 @@
+# randotools 0.1.0
+
+* addition of tools to assess the balance of randomised elements
+
 # randotools 0.0.4
 
 * Package renamed to `randotools` to allow more flexibility with what it includes

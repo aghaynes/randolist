@@ -32,6 +32,17 @@ levels in \code{randovar} are used and assumed to be balanced}
 
 \item{...}{other arguments passed onto other methods}
 }
+\value{
+a list with:
+\itemize{
+\item \code{n_rando}: the number of randomisations
+\item \code{stratavars}: the names of the stratification variables
+\item \code{arms}: the arms
+\item \code{observed}: a dataframe with the observed imbalance
+\item \code{simulated}: a dataframe with the simulated imbalances (number of rows = \code{nrow(n_iter)})
+\item \code{tests}: a dataframe with the p-values
+}
+}
 \description{
 This function tests whether the observed imbalance is less than might be
 expected via a random draw, via a permutation test.

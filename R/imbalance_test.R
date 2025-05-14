@@ -14,7 +14,15 @@
 #' @param cross logical. Whether to cross the stratification variables.
 #' @param ... other arguments passed onto other methods
 #'
-#' @returns
+#' @returns a list with:
+#' \itemize{
+#'   \item \code{n_rando}: the number of randomisations
+#'   \item \code{stratavars}: the names of the stratification variables
+#'   \item \code{arms}: the arms
+#'   \item \code{observed}: a dataframe with the observed imbalance
+#'   \item \code{simulated}: a dataframe with the simulated imbalances (number of rows = \code{nrow(n_iter)})
+#'   \item \code{tests}: a dataframe with the p-values
+#' }
 #' @export
 #' @importFrom dplyr bind_rows
 #' @importFrom cli cli_progress_along
@@ -35,6 +43,7 @@ imbalance_test <- function(data,
                            arms = NULL,
                            cross = TRUE, ...){
 
+  simrando <- strata_interaction <- overall <- NULL
 
   if(is.null(arms)){
     message("assuming balanced randomisation between arms")

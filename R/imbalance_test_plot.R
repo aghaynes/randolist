@@ -24,6 +24,8 @@
 
 imbalance_test_plot <- function(test, vline_col = "red", stack = TRUE){
 
+  strata <- rando_n <- overall <- stratavars <- NULL
+
   if(!class(test)[1] == "imbalance")
     stop("`test` should be created via `imbalance_test`")
   if(!is.logical(stack))

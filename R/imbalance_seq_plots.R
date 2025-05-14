@@ -45,6 +45,8 @@ imbalance_seq_plots <- function(data,
                                 randovar,
                                 stratavars = NULL,
                                 cross = TRUE){
+  rando_n <- simarm <- varval <- var <- NULL
+
   armf <- randovar
   data <- data |>
     mutate(rando_n = row_number(),

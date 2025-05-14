@@ -2,6 +2,9 @@
 #' @importFrom ggplot2 ggplot aes geom_line guides guide_none ylim labs
 #' @noRd
 imbplot <- function(data, col = FALSE, ymax, title){
+
+  int <- rando_n <- imbalance <- NULL
+
   if(col){
     thisaes <- aes(x = rando_n, y = imbalance, col = int)
   } else {

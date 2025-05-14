@@ -31,6 +31,7 @@ testdat <- tibble::tribble(
 )
 # testdat |> count(strata, arm3)
 # testdat |> count(strata, arm4)
+# testdat |> count(arm4)
 # testdat |> count(strata, arm5)
 
 
@@ -38,7 +39,7 @@ test_that("imbalance works for balanced data", {
   expect_equal(imbalance(testdat, arm)$imbalance, 0)
   expect_equal(strataimbalance(testdat, arm, strata)$imbalance, c(0, 0))
   expect_equal(imbalance(testdat, arm2)$imbalance, 0)
-  expect_equal(imbalance(testdat, arm4)$imbalance, 0)
+  expect_equal(imbalance(testdat, arm4)$imbalance, 1)
 })
 test_that("imbalance works for imbalanced data", {
   expect_equal(strataimbalance(testdat, arm2, strata)$imbalance, c(4, 4))

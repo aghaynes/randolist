@@ -61,13 +61,7 @@ variables) and within strata identified by each stratifying variable itself.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">imbalance_seq_plots</span><span class="op">(</span></span>
-<span>  <span class="va">data</span>,</span>
-<span>  <span class="va">randovar</span>,</span>
-<span>  stratavars <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  cross <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  stack <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">imbalance_seq_plots</span><span class="op">(</span><span class="va">data</span>, <span class="va">randovar</span>, stratavars <span class="op">=</span> <span class="cn">NULL</span>, cross <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -90,11 +84,6 @@ variables) and within strata identified by each stratifying variable itself.</p>
 <dd><p>logical whether to cross the stratification variables to create
 the individual strata</p></dd>
 
-
-<dt id="arg-stack">stack<a class="anchor" aria-label="anchor" href="#arg-stack"></a></dt>
-<dd><p>logical whether to use <code><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html" class="external-link">patchwork::wrap_plots</a></code> to combine the
-plots into a single 2x3 figure</p></dd>
-
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -107,8 +96,7 @@ E.g., if there is a 2-level stratification variable and a 3-level variable, ther
 will be 5 lines.</p></li>
 <li><p>The third pair shows the individual strata - the combination of all stratification
 variables. For the 2- and 3-level example mentioned above, this would result
-in 6 lines. This can be skipped by setting <code>cross</code> to <code>FALSE</code>.
-If <code>stack = FALSE</code>, a list of ggplots is returned.</p></li>
+in 6 lines. This can be skipped by setting <code>cross</code> to <code>FALSE</code>.</p></li>
 </ul></div>
 
     <div class="section level2">

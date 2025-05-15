@@ -110,11 +110,9 @@ randomisation sequence:
 ``` r
 data(rando_balance)
 imbalance_seq_plots(rando_balance, "rando_res")
-#> Calculating sequential imbalance (overall)
-#> Calculating simulated sequential imbalance (overall)
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/imbseq-1.png" width="100%" />
 
 `imbalance_test` compares the observed imbalance with random allocation,
 providing a p-value, which can then be plotted to inspect the observed
@@ -122,14 +120,13 @@ providing a p-value, which can then be plotted to inspect the observed
 
 ``` r
 (imb <- imbalance_test(rando_balance, "rando_res"))
-#> assuming balanced randomisation between arms
 #> Randomisations to date: 100 
 #> Overall imbalance: 0 
 #>   Probability of equal or less imbalance from random allocation: 0.072
 imbalance_test_plot(imb)
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="man/figures/imbtest-1.png" width="100%" />
 
 ### Acknowledgements
 

@@ -73,14 +73,14 @@ Under some scenarios (e.g. minimization), it can be helpful to monitor the imbal
 
 `imbalance_seq_plots` shows the evolution of imbalance along the randomisation sequence:
 
-```{r}
+```{r imbseq, fig.path="man/figures/", message=FALSE}
 data(rando_balance)
 imbalance_seq_plots(rando_balance, "rando_res")
 ```
 
 `imbalance_test` compares the observed imbalance with random allocation, providing a p-value, which can then be plotted to inspect the observed (the red line) and simulated imbalances (the bars):
 
-```{r}
+```{r imbtest, fig.path="man/figures/", message=FALSE}
 (imb <- imbalance_test(rando_balance, "rando_res"))
 imbalance_test_plot(imb)
 ```

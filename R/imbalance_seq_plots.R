@@ -12,6 +12,8 @@
 #' @param stratavars variable names of stratification variables
 #' @param cross logical whether to cross the stratification variables to create
 #' the individual strata
+#' @param stack logical whether to use `patchwork::wrap_plots` to combine the
+#' plots into a single 2x3 figure
 #' @returns Up to six ggplots. Each has the randomisation sequence along the x-axis
 #' and imbalance on the y-axis. The different lines denotes different groupings.
 #' All plots are paired: the first plot shows the observed balance, the second
@@ -23,11 +25,13 @@
 #' - The third pair shows the individual strata - the combination of all stratification
 #' variables. For the 2- and 3-level example mentioned above, this would result
 #' in 6 lines. This can be skipped by setting `cross` to `FALSE`.
+#' If `stack = FALSE`, a list of ggplots is returned.
 #' @importFrom purrr map_dfr
 #' @importFrom dplyr mutate filter row_number
 #' @importFrom ggplot2 ggplot aes geom_line ylim
 #' @importFrom rlang sym
 #' @importFrom cli cli_progress_message
+#' @importFrom patchwork wrap_plots
 #' @export
 #' @examples
 #' data(rando_balance)
@@ -44,7 +48,8 @@
 imbalance_seq_plots <- function(data,
                                 randovar,
                                 stratavars = NULL,
-                                cross = TRUE){
+                                cross = TRUE,
+                                stack = TRUE){
   rando_n <- simarm <- varval <- var <- NULL
 
   armf <- randovar
@@ -158,7 +163,14 @@ imbalance_seq_plots <- function(data,
               title = "Imbalance within stratifying variables (simulated)",
               col = TRUE)
   }
-  return(out)
+
+  if(stack){
+    return(wrap_plots(out, ncol = 2))
+  } else {
+
+    return(out)
+  }
+
 }
 
 

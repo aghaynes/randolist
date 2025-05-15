@@ -1,6 +1,6 @@
 #' Plot imbalance and simulation and test results
 #'
-#' Plot histograms of imbalance values from simulation results and a vertical
+#' Plot histograms of imbalance values from simulated random allocation and a vertical
 #' lines to indicate the observed imbalance for each randomisation level (overall,
 #' stratification variable level, and strata level, where appropriate). The
 #' p-values from the tests are included in the figure captions.

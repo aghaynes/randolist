@@ -133,15 +133,15 @@ print.imbalance <- function(x, ...){
 
   cat("Randomisations to date:", x$n_rando, "\n")
   cat("Overall imbalance:", x$observed$overall, "\n")
-  cat("  Probability of less imbalance from random allocation:", x$tests$overall, "\n")
+  cat("  Probability of equal or less imbalance from random allocation:", x$tests$overall, "\n")
 
   if(!is.na(x$tests$stratavars)){
     cat("\nRandomisation stratified by", glue_collapse(x$stratavars, ", ", last = " and "), "\n")
     cat("Maximum observed imbalanced within stratifying variables:", x$observed$stratavars, "\n")
-    cat("  Probability of less imbalance from random allocation:", x$tests$stratavars, "\n")
+    cat("  Probability of equal or less imbalance from random allocation:", x$tests$stratavars, "\n")
     if(!is.na(x$tests$strata)){
       cat("Maximum observed imbalanced within individual strata:", x$observed$strata, "\n")
-      cat("  Probability of less imbalance from random allocation:", x$tests$strata, "\n")
+      cat("  Probability of equal or less imbalance from random allocation:", x$tests$strata, "\n")
     }
   }
 
